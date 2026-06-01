@@ -23,9 +23,29 @@ int main() {
 
     // Aplicação da lógica de movimentação dentro do bloco switch-case
     switch (escolha) {
-        case 1: // Movimentação da Torre de 5 casas para direita
-            for(int i = 0; i < 5; i++) {
-
+        case 1: // Movimentação da Torre de 5 casas para direita (loop FOR)
+            for(int i = 1; i <= 5; i++) {
+                printf("Casa %d: Direita\n", i);
             }
+            break;
+        case 2: // Movimentação do Bispo - Cinco casas para diagonal cima e à direita - Laço While
+            int posicao = 1;
+            while(posicao <= 5) { // até 5 casas
+                printf("Casa %d: Cima, Direita\n", posicao);
+                posicao++;
+            }
+            break;
+        case 3: // Movimentação da Rainha - 8 casas para esquerda
+            int casa = 1; // posição inicial da peça 
+            do {
+                printf("Casa %d: Esquerda\n", casa);
+                casa++;
+            } while (casa <= 8);
+            break;
+        default:
+            printf("Opção inválida!\n");
+            printf("Encerrando programa...\n");
     }
+    printf("===== SIMULAÇÃO CONCLUÍDA =====\n");
+    return 0;
 }
